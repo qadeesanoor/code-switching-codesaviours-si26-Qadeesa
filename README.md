@@ -26,3 +26,30 @@ Each word in every sentence is tagged as one of:
 - 151 sentences
 - 1,489 word-level entries
 - Label distribution: URD 901, ENG 488, MIX 100
+
+### Approach
+- Base model: `xlm-roberta-base`, fine-tuned for token classification
+- Task: 3-class per-token classification (URD / ENG / MIX)
+- Split: 80/20 train-test on sentence level (train_test_split, random_state=42)
+- Framework: HuggingFace Transformers + Trainer API
+
+### Evaluation
+Per-label F1 (URD, ENG, MIX) and overall weighted F1 were computed using
+standard per-token classification metrics (scikit-learn), not span-based
+NER metrics — the task labels every token independently rather than marking
+entity spans, so BIO-style sequence-labeling metrics (e.g. seqeval) do not
+apply here.
+
+- Overall F1: 98%
+- F1 URD: 99%
+- F1 ENG: 98%
+- F1 MIX: 89% — note: MIX has only 100 total instances in the dataset,
+  so this score is based on a small test-split sample (~15–20 words) and
+  should be read as provisional, not a stable estimate.
+
+### Known Limitations
+- Dataset size (151 sentences) is small for fine-tuning a 270M-parameter
+  transformer; results should be interpreted with that in mind rather than
+  reported as a definitive performance benchmark.
+- Class imbalance (URD 901, ENG 488, MIX 100) means MIX-label performance
+  is the least reliable of the three.
