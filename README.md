@@ -126,11 +126,7 @@ A single 80/20 split means the reported scores can be sensitive to which sentenc
 ```text
 code-switching-codesaviours-si26-Qadeesa/
 │
-├── data/
-│   └── ...
-│
-├── notebooks/
-│   └── ...
+├── dataset.csv
 │
 ├── models/
 │   └── ...
