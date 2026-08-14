@@ -222,10 +222,10 @@ Then open the project notebook and run the cells sequentially.
 
 ---
 
-## Repository
+## Use directly Model
 
-**GitHub:**
-https://github.com/qadeesanoor/code-switching-codesaviours-si26-Qadeesa
+*Huggingface*
+(https://huggingface.co/qadeesanoor/code-switching-codesaviours-si26-qadeesa/tree/main)
 
 ---
 
