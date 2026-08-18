@@ -1,4 +1,4 @@
-# Code Switching NLP | Code Saviours SI-26 | Qadeesanoor
+# Code Switching NLP | Code Saviours SI-26 | Qadeesa
 
 ## About the Project
 
